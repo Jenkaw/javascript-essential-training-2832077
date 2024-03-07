@@ -9,9 +9,13 @@
 
 const backpack = {
   name: "Everyday Backpack",
-  volume: 30,
+  volume: {
+    big: 50,
+    small: 24,
+  },
   color: "grey",
   pocketNum: 15,
+
   strapLength: {
     left: 26,
     right: 26,
@@ -23,4 +27,14 @@ const backpack = {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+
+  newVolume: function (bigvolume, smallvolume) {
+    this.volume.big = bigvolume;
+    this.volume.small = smallvolume;
+  },
 };
+console.log("The backpack object:", backpack);
+console.log("big before:", backpack.volume.big);
+
+backpack.newVolume(80, 10);
+console.log("big after:", backpack.volume.big);
